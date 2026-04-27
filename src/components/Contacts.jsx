@@ -6,7 +6,7 @@ export default function Contact() {
       <div className="flex flex-col items-center gap-4 text-white/70">
 
         <a href="mailto:liuryanty@gmail.com" className="hover:text-white transition">
-          📧
+          liuryanty@gmail.com
         </a>
 
         <a
@@ -15,7 +15,7 @@ export default function Contact() {
           rel="noopener noreferrer"
           className="hover:text-white transition"
         >
-          LinkedIn
+          linkedin.com/in/ryantyl
         </a>
 
         <a
@@ -24,10 +24,21 @@ export default function Contact() {
           rel="noopener noreferrer"
           className="hover:text-white transition"
         >
-          GitHub
+          github.com/Rxn321
         </a>
-
       </div>
+
+      <div className="mt-20 text-mid text-white/90 pb-2">
+        <a
+          href="https://github.com/Rxn321"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-sky-400 transition"
+        >
+        Developed by <span className="text-blue-400">Ryan Liu</span> - 2026
+        </a>
+      </div>
+
     </section>
   )
 }
