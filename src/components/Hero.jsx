@@ -11,7 +11,7 @@ export default function Hero() {
       </p>
 
       <div className="mt-10 flex gap-4">
-        <a href="#projects" className="px-6 py-3 rounded-full bg-white text-black font-medium hover:scale-105 transition">
+        <a href="#projects" className="px-6 py-3 rounded-full bg-sky-50 !text-black font-medium hover:scale-105 transition">
           View Projects
         </a>
 

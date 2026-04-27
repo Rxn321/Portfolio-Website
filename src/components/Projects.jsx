@@ -14,7 +14,14 @@ export default function Projects() {
           <h3 className="font-semibold">Coming Soon</h3>
           <p className="text-white/60 text-sm mt-2">More projects on the way</p>
         </div>
+      </div>
 
+      <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-lg hover:scale-105 transition inline-block">
+        <img
+          src="./assets/rocket-1.jpg"
+          alt="project"
+          className="rounded-xl"
+        />
       </div>
     </section>
   )
