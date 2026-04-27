@@ -1,3 +1,4 @@
+import rocket from "../assets/rocket-1.jpg"
 export default function Projects() {
   return (
     <section id="projects" className="max-w-4xl mx-auto px-6 py-24">
@@ -17,11 +18,7 @@ export default function Projects() {
       </div>
 
       <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-lg hover:scale-105 transition inline-block">
-        <img
-          src="./assets/rocket-1.jpg"
-          alt="project"
-          className="rounded-xl"
-        />
+        <img src={rocket} alt="project" />
       </div>
     </section>
   )
