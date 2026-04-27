@@ -14,10 +14,6 @@ export default function Hero() {
         <a href="#projects" className="px-6 py-3 rounded-full bg-sky-50 !text-black font-medium hover:scale-105 transition">
           View Projects
         </a>
-
-        <a href="#contact" className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition">
-          Contact
-        </a>
       </div>
     </main>
   )

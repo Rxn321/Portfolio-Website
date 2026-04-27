@@ -8,12 +8,12 @@ export default function Projects() {
 
         <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
           <h3 className="font-semibold">Portfolio Website</h3>
-          <p className="text-white/60 text-sm mt-2">React + Tailwind portfolio</p>
+          <p className="text-white/60 text-sm mt-2">React + Tailwind portfolio, u r here</p>
         </div>
 
         <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
-          <h3 className="font-semibold">Another Website</h3>
-          <p className="text-white/60 text-sm mt-2">Another web project</p>
+          <h3 className="font-semibold">Fiance stuff</h3>
+          <p className="text-white/60 text-sm mt-2">still gotta do</p>
         </div>
       </div>
 
@@ -24,8 +24,8 @@ export default function Projects() {
       <div className="grid gap-6 md:grid-cols-2">
 
         <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
-          <h3 className="font-semibold">Portfolio Website</h3>
-          <p className="text-white/60 text-sm mt-2">React + Tailwind portfolio</p>
+          <h3 className="font-semibold">UBC Rocket</h3>
+          <p className="text-white/60 text-sm mt-2">Best design team in UBC</p>
         </div>
 
         <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">

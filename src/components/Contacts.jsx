@@ -30,7 +30,7 @@ export default function Contact() {
 
       <div className="mt-20 text-mid text-white/90 pb-2">
         <a
-          href="https://github.com/Rxn321"
+          href="https://github.com/Rxn321/Portfolio-Website"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-sky-400 transition"
