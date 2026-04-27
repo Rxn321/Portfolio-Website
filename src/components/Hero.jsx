@@ -1,0 +1,24 @@
+export default function Hero() {
+  return (
+    <main className="flex flex-col items-center justify-center text-center min-h-screen px-6 pt-24">
+      <h1 className="text-5xl md:text-7xl font-semibold tracking-tight">
+        Hi, I'm Ryan and im an unemployed chud TAT
+      </h1>
+
+      <p className="mt-6 text-white/60 text-lg max-w-xl">
+        I'm a second year mathematics student at the University of British Columbia.
+        i like doom scrolling.
+      </p>
+
+      <div className="mt-10 flex gap-4">
+        <a href="#projects" className="px-6 py-3 rounded-full bg-white text-black font-medium hover:scale-105 transition">
+          View Projects
+        </a>
+
+        <a href="#contact" className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition">
+          Contact
+        </a>
+      </div>
+    </main>
+  )
+}
