@@ -2,22 +2,23 @@ function App() {
   return (
     <div>
       <nav style={styles.nav}>
-        <h2>Ryan</h2>
-        <div>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
+      <div style={styles.logo}>Ryan</div>
+
+      <div style={styles.links}>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
       <section style={styles.hero}>
-        <h1>Hi, I'm Ryan 👋</h1>
-        <p>IT student & aspiring developer</p>
+        <h1>hello</h1>
+        <p></p>
       </section>
 
       <section id="about" style={styles.section}>
         <h2>About Me</h2>
-        <p>I build websites and work with tech.</p>
+        <p>unemployed...💔</p>
       </section>
 
       <section id="projects" style={styles.section}>
@@ -27,7 +28,7 @@ function App() {
 
       <section id="contact" style={styles.section}>
         <h2>Contact</h2>
-        <p>Email: your@email.com</p>
+        <p>Email: liuryanty@gmail.com</p>
       </section>
     </div>
   )
@@ -38,7 +39,7 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     padding: "20px",
-    background: "#111",
+    background: "#383838",
     color: "white"
   },
   hero: {

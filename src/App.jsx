@@ -40,7 +40,7 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     padding: "20px",
-    background: "#111",
+    background: "#383838",
     color: "white"
   },
   hero: {
@@ -51,7 +51,7 @@ const styles = {
     padding: "60px 20px"
   },
   card: {
-  background: "#1e293b",
+  background: "#696969",
   padding: "20px",
   borderRadius: "10px",
   marginTop: "20px"
