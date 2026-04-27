@@ -1,8 +1,9 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #646464;
+  background: #696969;
   color: white;
+  padding-top: 70px;
 }
 
 a {
@@ -13,4 +14,42 @@ a {
 
 a:hover {
   color: #38bdf8;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 40px;
+
+  background: rgba(15, 23, 42, 0.6); /* semi-transparent */
+  backdrop-filter: blur(12px);        /* THE glass effect */
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  z-index: 1000;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.links a:hover {
+  opacity: 1;
 }
