@@ -6,7 +6,8 @@ export default function About() {
     <section id="about" className="max-w-4xl mx-auto px-6 py-1">
       <h2 className="text-3xl font-semibold mb-4">About</h2>
       <p className="text-white/60">
-        hehehehehe ha
+        I'm a second year mathematics student at the University of British Columbia.
+        I like doom scrolling.
       </p>
       
       <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-lg hover:scale-105 transition inline-block ">

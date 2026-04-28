@@ -6,8 +6,7 @@ export default function Hero() {
       </h1>
 
       <p className="mt-6 text-white/60 text-lg max-w-xl">
-        I'm a second year mathematics student at the University of British Columbia.
-        i like doom scrolling.
+        hmmm what do i even put here
       </p>
 
       <div className="mt-10 flex gap-4">

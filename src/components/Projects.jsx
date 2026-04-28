@@ -8,12 +8,12 @@ export default function Projects() {
 
         <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
           <h3 className="font-semibold">Portfolio Website</h3>
-          <p className="text-white/60 text-sm mt-2">React + Tailwind portfolio, u r here</p>
+          <p className="text-white/60 text-sm mt-2">Personal website build with React + Tailwind website, you r here</p>
         </div>
 
         <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
-          <h3 className="font-semibold">Fiance stuff</h3>
-          <p className="text-white/60 text-sm mt-2">still gotta do</p>
+          <h3 className="font-semibold">Portfolio Optimization</h3>
+          <p className="text-white/60 text-sm mt-2">Data analysis using Python, so i can stop losing money on stocks</p>
         </div>
       </div>
 
@@ -30,7 +30,7 @@ export default function Projects() {
 
         <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
           <h3 className="font-semibold">Another Website</h3>
-          <p className="text-white/60 text-sm mt-2">Another web project</p>
+          <p className="text-white/60 text-sm mt-2">Hopefully another web project</p>
         </div>
       </div>
 
