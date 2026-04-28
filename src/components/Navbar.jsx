@@ -12,7 +12,7 @@ export default function Navbar() {
         border border-white/10 px-6 md:px-10 py-4 md:py-6
         w-[95%] max-w-4xl">
 
-        <div className="flex items-center text-white/70">
+        <div className="flex items-center text-white/70 hidden md:flex gap-4">
           <a href="#projects" className="hover:text-white transition"><AiOutlineStock size={22}/></a>
         </div>
  {/* Rrm to add fiance project link here*/}
