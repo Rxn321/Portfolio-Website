@@ -23,10 +23,11 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="bg-white p-3 pb-6 shadow-xl rotate-[-4deg] hover:rotate-0 transition duration-300">        <img
+      <div className="bg-white p-3 pb-6 shadow-xl rotate-[-4deg] hover:rotate-0 transition duration-300">
+        <img
           src={me}
           alt="Ryan"
-          className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-md shadow-xl"        />
+          className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-md shadow-xl"/>
       </div>
 
     </main>
