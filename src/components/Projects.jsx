@@ -1,39 +1,74 @@
 import rocket from "../assets/rocket-1.jpg"
+import { motion } from "framer-motion"
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const item = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+}
+
 export default function Projects() {
   return (
     <section id="projects" className="max-w-4xl mx-auto px-6 py-24">
-      <h2 className="text-3xl font-semibold mb-8">Projects</h2>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.2 }}
+      >
 
-        <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
-          <h3 className="font-semibold">Portfolio Website</h3>
-          <p className="text-white/60 text-sm mt-2">Personal website build with React + Tailwind website, you r here</p>
+        <h2 className="text-3xl font-semibold mb-8">Projects</h2>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
+            <h3 className="font-semibold">Portfolio Website</h3>
+            <p className="text-white/60 text-sm mt-2">
+              Personal website build with React + Tailwind website, you r here
+            </p>
+          </motion.div>
+
+          <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
+            <h3 className="font-semibold">Portfolio Optimization</h3>
+            <p className="text-white/60 text-sm mt-2">
+              Data analysis using Python, so i can stop losing money on stocks
+            </p>
+          </motion.div>
         </div>
 
-        <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
-          <h3 className="font-semibold">Portfolio Optimization</h3>
-          <p className="text-white/60 text-sm mt-2">Data analysis using Python, so i can stop losing money on stocks</p>
+
+        <motion.div variants={item} className="mt-8 bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-lg hover:scale-105 transition inline-block">
+          <img src={rocket} alt="project" className="w-full h-full object-cover rounded-xl" />
+        </motion.div>
+
+
+        <div className="grid gap-6 md:grid-cols-2 mt-8">
+
+          <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
+            <h3 className="font-semibold">UBC Rocket</h3>
+            <p className="text-white/60 text-sm mt-2">Best design team in UBC</p>
+          </motion.div>
+
+          <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
+            <h3 className="font-semibold">Another Website</h3>
+            <p className="text-white/60 text-sm mt-2">Hopefully another web project</p>
+          </motion.div>
+
         </div>
-      </div>
 
-      <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-lg hover:scale-101 transition inline-block">
-        <img src={rocket} alt="project" className="w-full h-full object-cover rounded-xl"/>
-      </div>
-
-      <div className="grid gap-6 md:grid-cols-2">
-
-        <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
-          <h3 className="font-semibold">UBC Rocket</h3>
-          <p className="text-white/60 text-sm mt-2">Best design team in UBC</p>
-        </div>
-
-        <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
-          <h3 className="font-semibold">Another Website</h3>
-          <p className="text-white/60 text-sm mt-2">Hopefully another web project</p>
-        </div>
-      </div>
-
+      </motion.div>
     </section>
   )
 }
