@@ -12,11 +12,12 @@ export default function Hero() {
         className="max-w-xl"
       >
         <h1 className="text-5xl md:text-7xl font-semibold tracking-tight">
-          Hi, I'm Ryan and im unemployed :(
+          Hi, I’m Ryan
         </h1>
 
         <p className="mt-6 text-white/60 text-lg">
-          very sad
+         — I enjoy building things with code and data-from software to mechanical projects.
+          Currently exploring projects in tech, finance, and real-world problem solving.
         </p>
 
         <div className="mt-10 flex gap-1 justify-center w-full">

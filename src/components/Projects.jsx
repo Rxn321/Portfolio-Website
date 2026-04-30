@@ -36,14 +36,20 @@ export default function Projects() {
           <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
             <h3 className="font-semibold">Portfolio Website</h3>
             <p className="text-white/60 text-sm mt-2">
-              Personal website build with React + Tailwind website, you r here
+              Developed a personal portfolio website using React and Tailwind CSS to showcase my projects and skills, 
+              featuring responsive design and smooth animations with Framer Motion.
+
             </p>
+            <span className="text-xs bg-white/10 flex justify-center py-1 rounded-full ml-2">
+              You're here
+            </span>
           </motion.div>
 
           <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
             <h3 className="font-semibold">Portfolio Optimization</h3>
             <p className="text-white/60 text-sm mt-2">
-              Data analysis using Python, so i can stop losing money on stocks
+              Python-based data analysis project for portfolio optimization using historical stock data to evaluate risk and returns and improve investment decisions.
+              So i can stop losing money on stocks.
             </p>
           </motion.div>
         </div>
@@ -58,12 +64,15 @@ export default function Projects() {
 
           <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
             <h3 className="font-semibold">UBC Rocket</h3>
-            <p className="text-white/60 text-sm mt-2">Best design team in UBC</p>
+            <p className="text-white/60 text-sm mt-2">
+              Worked on the UBC Rocket team using SolidWorks & fusion 360 for CAD design and applied machining techniques including 
+              CNC, lathe, waterjet and milling, along with 3D printing and engineering analysis.
+            </p>
           </motion.div>
 
           <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
             <h3 className="font-semibold">Another Website</h3>
-            <p className="text-white/60 text-sm mt-2">Hopefully another web project</p>
+            <p className="text-white/60 text-sm mt-2">in progress</p>
           </motion.div>
 
         </div>
