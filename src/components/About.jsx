@@ -14,32 +14,35 @@ export default function About() {
   >
     <section id="about" className="max-w-4xl mx-auto px-6 py-1 space-y-8">
       <h2 className="text-3xl font-semibold mb-4">About</h2>
-      <p className="text-white/60 leading-relaxed">
-        I'm a second year applied mathematics student at the University of British Columbia. 
-        I have a background in IT support and I enjoy building hand-on projects that combine data and real-world applications.
-        Recently, I’ve been working on a portfolio optimization project using real market data to better understand risk and returns. 
-        Outside of school, I enjoy 3d printing, snowboarding and working on mechanical things.
-        I’m currently focused on growing my skills in data analysis, and I’m always looking for opportunities to learn and build.
-
-
+      <p className="text-white/80 leading-relaxed">
+        UBC Math student working across IT, mechanical design, and data. I like turning ideas into systems that actually work.
       </p>
       
       <div className="flex gap-6 flex-wrap">
         <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-lg hover:scale-105 transition">
           <img src={snow0} alt="snow" className="w-56 h-36 object-cover rounded-xl" />
+          <p className="text-xs text-white/60 mt-2 text-center">
+            Ski conditions at Cypress Mountain
+          </p>
         </div>
 
         <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-lg hover:scale-105 transition">
           <img src={snow1} alt="snow" className="w-56 h-36 object-cover rounded-xl" />
+          <p className="text-xs text-white/60 mt-2 text-center">
+            Fresh powder runs after snowfall
+          </p>
         </div>
 
         <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-lg hover:scale-105 transition">
           <img src={snow3} alt="snow" className="w-56 h-36 object-cover rounded-xl" />
+          <p className="text-xs text-white/60 mt-2 text-center">
+            Evening view on the slopes
+          </p>
         </div>
 
       </div>
     </section>
   </motion.div>
   )
-   {/*Need more pics*/}
+   {/*Need better pics*/}
 }

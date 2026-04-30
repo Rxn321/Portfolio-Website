@@ -15,9 +15,9 @@ export default function Hero() {
           Hi, I’m Ryan
         </h1>
 
-        <p className="mt-6 text-white/60 text-lg">
-         — I enjoy building things with code and data-from software to mechanical projects.
-          Currently exploring projects in tech, finance, and real-world problem solving.
+        <p className="mt-6 text-white/80 text-lg">
+         —I'm a second year applied mathematics student at the University of British Columbia. 
+        I have a background in IT support and I enjoy building hand-on projects that combine data and real-world applications.
         </p>
 
         <div className="mt-10 flex gap-1 justify-center w-full">
