@@ -1,5 +1,6 @@
 import rocket1 from "../assets/rocket-1.jpg"
 import rocket2 from "../assets/meAndRocket.jpg"
+import plate from "../assets/plate.jpg"
 import { motion } from "framer-motion"
 
 const container = {
@@ -97,7 +98,7 @@ export default function Projects() {
               <img src={rocket2} className="w-24 h-24 object-cover" /> 
               </div>
               <div className="w-24 h-24 border-2 border-white/40 rounded-lg overflow-hidden hover:scale-250 transition"> 
-                <img src={rocket1} className="w-24 h-24 object-cover" /> 
+                <img src={plate} className="w-24 h-24 object-cover" /> 
               </div> 
             </div>
           </motion.div>
