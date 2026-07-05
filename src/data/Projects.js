@@ -8,11 +8,11 @@ import physic from "../assets/engineV0.1.png"
 // edit desc soon
 export const projects = [
   {
-    title: "📍Portfolio Website📍",
-    desc: `You are here!`,
-    tags: [ "React", "Tailwind", "Frontend", "UI/UX"],
+    title: "📍Moments📍",
+    desc: `A visual collection of the things I've been building, exploring, and enjoying.`,
+    tags: [ "TypeScript", "Tailwind", "Frontend", "UI/UX"],
     img: portfolio,
-    link: "https://github.com/Rxn321/Portfolio-Website",
+    link: "https://portfolio-blogs-phi.vercel.app/",
   },
   {
     title: "Portfolio Optimization",
