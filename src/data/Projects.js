@@ -1,8 +1,7 @@
-import rocket from "../assets/cloudburst.JPG"
-import portfolio from "../assets/snow-1.PNG"
-import finance from "../assets/cloudburst.JPG"
-import optimize from "../assets/optimization_output.png"
-import physic from "../assets/engineV0.1.png"
+import rocket from "../assets/rocket.avif"
+import portfolio from "../assets/sb.avif"
+import optimize from "../assets/optimization.avif"
+import physic from "../assets/physicsEngineV0.2.avif"
 
 
 // edit desc soon

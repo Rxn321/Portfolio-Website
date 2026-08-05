@@ -1,4 +1,4 @@
-import collage from "../assets/collage.png";
+import collage from "../assets/collage.avif";
 import { motion } from "framer-motion"
 import { getTheme } from "../styles/theme"
 import { currently, hobby, skills } from "../data/about"
