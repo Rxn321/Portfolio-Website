@@ -2,9 +2,9 @@ import rocket from "../assets/rocket.avif"
 import portfolio from "../assets/sb.avif"
 import optimize from "../assets/optimization.avif"
 import physic from "../assets/physicsEngineV0.2.avif"
+import temp from "../assets/IMG_6516.avif"
 
 
-// edit desc soon
 export const projects = [
   {
     title: "📍Moments📍",
@@ -23,9 +23,9 @@ export const projects = [
   },
   {
     title: "Physics Engine",
-  desc: `A real-time 2D physics engine and renderer built in C++ 
-  and OpenGL. Features body collisions, gravity, and click to spawn. 
-  Using hand-written vectors, collision math, and orthographic projection. Base of my next project.`,
+    desc: `A real-time 2D physics engine and renderer built in C++ 
+    and OpenGL. Features body collisions, gravity, and click to spawn. 
+    Using hand-written vectors, collision math, and orthographic projection. Base of my next project.`,
     tags: ["C++", "OpenGL", "CMAKE"],
     img: physic,
     link: "https://github.com/Rxn321/2D-Physics-Engine.git",
@@ -37,5 +37,13 @@ export const projects = [
     tags: ["CAD", "FEA", "Project Management", "Manufacturing"],
     img: rocket,
     link: "https://www.ubcrocket.com/project-COTS.html",
+  },
+  {
+    title: "Certification Rocket",
+    desc: `Putting IREC experience to use, designing and developing a high-power model rocket for L1 and L2 certification, 
+    including structural design, 3D-printed components, flight simulation, and recovery systems.`,
+    tags: ["Rocketry", "CAD", "3D Printing", "Simulation"],
+    img: temp,
+    link: "",
   },
 ]
