@@ -10,7 +10,9 @@ import Toggle from './components/Toggle'
 function App() {
   const [scrolledPast, setScrolledPast] = useState(false)
   const [scrolledBottom, setScrolledBottom] = useState(false)
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(() =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
 
   const toggleTheme = () => {
     setDarkMode(prev => !prev)
