@@ -32,7 +32,7 @@ export const projects = [
   {
     title: "UBC Rocket",
     desc: `Designed and manufactured structural rocket components for UBC Rocket's competition rocket Cloudburst. 
-    Cloudburst placed 5th in the $30K COTS category at the 2026 International Rocket Engineering Competition (IREC), 
+    Cloudburst placed 5th in the 30K COTS category at the 2026 International Rocket Engineering Competition (IREC), 
     the world's largest collegiate rocket engineering competition.`,    
     tags: ["CAD", "FEA", "Competition", "Manufacturing"],
     img: rocket,
