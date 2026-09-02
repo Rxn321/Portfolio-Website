@@ -23,9 +23,8 @@ export const projects = [
   },
   {
     title: "Physics Engine",
-    desc: `A real-time 2D physics engine and renderer built in C++ 
-    and OpenGL. Features body collisions, gravity, and click to spawn. 
-    Using hand-written vectors, collision math, and orthographic projection. Base of my next project.`,
+    desc: `A C++/OpenGL physics engine that simulates gravitational interactions, collisions, 
+    and orbital motion, with real-time 3D visualization of gravity wells and particle trails.`,
     tags: ["C++", "OpenGL", "CMAKE"],
     img: physic,
     link: "https://github.com/Rxn321/2D-Physics-Engine.git",
