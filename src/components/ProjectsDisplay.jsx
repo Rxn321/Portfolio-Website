@@ -14,9 +14,11 @@ export default function Projects({ darkMode }) {
 
   const intervalRef = useRef(null)
   useEffect(() => {
-    resetInterval()
+    if (!isMobile) {
+      resetInterval()
+    }
     return () => clearInterval(intervalRef.current)
-  }, [])
+  }, [isMobile])
 
   const pauseInterval = () => {
     clearInterval(intervalRef.current)
@@ -27,7 +29,7 @@ export default function Projects({ darkMode }) {
 
     intervalRef.current = setInterval(() => {
       setActive((prev) => (prev + 1) % projects.length)
-    }, 4000)
+    }, 2000)
   }
 
 
