@@ -6,6 +6,8 @@ import About from './components/About'
 import Projects from "./components/ProjectsDisplay"
 import Contacts from './components/Contacts'
 import Toggle from './components/Toggle'
+import ParticleBackground from "./components/ParticleBackground"
+
 
 function App() {
   const [scrolledPast, setScrolledPast] = useState(false)
@@ -50,6 +52,10 @@ function App() {
             : "from-white via-slate-100 to-slate-200"
         }`}
       />
+
+      {/* Particle Background */}
+      <ParticleBackground />
+
 
       {/*Top Overlay */}
       <motion.div
