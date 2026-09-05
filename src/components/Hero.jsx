@@ -1,5 +1,5 @@
 import me from "../assets/me.avif";
-import heroBg from "../assets/heroBg.jpg";
+import heroBg from "../assets/heroBg.avif";
 import { motion } from "framer-motion";
 import { getTheme } from "../styles/theme";
 import useIsMobile from "../styles/mobile";
