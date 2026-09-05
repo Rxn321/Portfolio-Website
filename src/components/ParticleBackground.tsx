@@ -68,15 +68,16 @@ export default function ParticleBackground({
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
 
-      /*
-       * Keep the particles spread across the screen.
-       */
+      /*Particle spread*/
       const maxRadius = Math.min(
         canvas.width,
         canvas.height
-      ) * 0.42;
+      ) * 0.7;
 
-      const minRadius = 300;
+      const minRadius = Math.min(
+        400,
+        maxRadius * 0.35
+      );
 
       const radius =
         minRadius +
