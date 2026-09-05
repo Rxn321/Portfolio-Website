@@ -49,7 +49,7 @@ export default function ParticleBackground({
 
     const colors = darkMode ? ["#ffffff"] : ["#555555"];
 
-    const PARTICLE_COUNT = isMobile ? 7 : 10;
+    const PARTICLE_COUNT = isMobile ? 7 : 15;
     const TRAIL_LENGTH = isMobile ? 30 : 60;
 
     const G = 1000
@@ -76,7 +76,7 @@ export default function ParticleBackground({
         canvas.height
       ) * 0.42;
 
-      const minRadius = 400;
+      const minRadius = 300;
 
       const radius =
         minRadius +
