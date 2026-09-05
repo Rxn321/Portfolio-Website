@@ -223,12 +223,12 @@ export default function ParticleBackground({
 
         if (
           mouseDistance > 1 &&
-          mouseDistance < 220
+          mouseDistance < 150
         ) {
           const mouseForce =
             ((220 - mouseDistance) /
               220) *
-            0.015;
+            0.04;
 
           particle.vx +=
             (mouseDx / mouseDistance) *
