@@ -1,22 +1,40 @@
-
 import { useEffect, useRef } from "react";
+import useIsMobile from "../styles/mobile"
+
 
 type Particle = {
   x: number;
   y: number;
+
   vx: number;
   vy: number;
-  radius: number;
+
+  size: number;
+  color: string;
+
+  trail: { x: number; y: number }[];
+
+  // Small random variation in the orbit
+  perturbation: number;
 };
 
-export default function ParticleBackground() {
+type ParticleBackgroundProps = {
+  darkMode: boolean;
+};
+
+export default function ParticleBackground({
+  darkMode,
+}: ParticleBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const canvas = canvasRef.current;
+
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
+
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -28,13 +46,15 @@ export default function ParticleBackground() {
       y: -1000,
     };
 
-    const isMobile = window.innerWidth < 768;
 
-    const PARTICLE_COUNT = isMobile ? 50 : 120;
-    const CONNECTION_DISTANCE = isMobile ? 0 : 120;
-    const MOUSE_RADIUS = 150;
+    const colors = darkMode ? ["#ffffff"] : ["#555555"];
 
-    // Resize canvas
+    const PARTICLE_COUNT = isMobile ? 7 : 10;
+    const TRAIL_LENGTH = isMobile ? 30 : 60;
+
+    const G = 1000
+
+
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -44,21 +64,77 @@ export default function ParticleBackground() {
 
     window.addEventListener("resize", resize);
 
-    // Create particles
     for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+
+      /*
+       * Keep the particles spread across the screen.
+       */
+      const maxRadius = Math.min(
+        canvas.width,
+        canvas.height
+      ) * 0.42;
+
+      const minRadius = 400;
+
+      const radius =
+        minRadius +
+        Math.random() *
+          (maxRadius - minRadius);
+
+      /*
+       * Random starting angle.
+       */
+      const angle =
+        Math.random() * Math.PI * 2;
+
+      /*
+       * Starting position.
+       */
+      const x =
+        centerX +
+        Math.cos(angle) * radius;
+
+      const y =
+        centerY +
+        Math.sin(angle) * radius;
+
+      const tangentX = -Math.sin(angle);
+      const tangentY = Math.cos(angle);
+
+
+      const orbitalSpeed =
+        Math.sqrt(G / radius);
+
+      const eccentricity =
+        0.82 +
+        Math.random() * 0.28;
+
+      const speed =
+        orbitalSpeed * eccentricity;
+
+      const direction =
+        Math.random() > 0.5 ? 1 : -1;
+
+      const vx =
+        tangentX * speed * direction;
+
+      const vy =
+        tangentY * speed * direction;
+
       particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-
-        // Very slow movement
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
-
-        radius: Math.random() * 1.5 + 0.5,
+        x,y,vx,vy,
+        size: Math.random(),
+        color: colors[i % colors.length],
+        trail: [],
+        perturbation:
+          0.0005 +
+          Math.random() * 0.001,
       });
     }
 
-    // Mouse tracking
+
     const handleMouseMove = (event: MouseEvent) => {
       mouse.x = event.clientX;
       mouse.y = event.clientY;
@@ -69,104 +145,239 @@ export default function ParticleBackground() {
       mouse.y = -1000;
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener(
+      "mousemove",
+      handleMouseMove
+    );
 
-    // Animation
+    window.addEventListener(
+      "mouseleave",
+      handleMouseLeave
+    );
+
+
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Update particles
+      ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+
+
       for (const particle of particles) {
+
+        const dx =
+          centerX - particle.x;
+
+        const dy =
+          centerY - particle.y;
+
+        const distanceSquared =
+          dx * dx + dy * dy;
+
+        const distance =
+          Math.sqrt(distanceSquared);
+
+        const safeDistance =
+          Math.max(distance, 60);
+
+        const gravity =
+          G /
+          (safeDistance *
+            safeDistance);
+
+        particle.vx +=
+          (dx / safeDistance) *
+          gravity;
+
+        particle.vy +=
+          (dy / safeDistance) *
+          gravity;
+
+
+        particle.vx +=
+          (Math.random() - 0.5) *
+          particle.perturbation;
+
+        particle.vy +=
+          (Math.random() - 0.5) *
+          particle.perturbation;
+
+        const mouseDx =
+          mouse.x - particle.x;
+
+        const mouseDy =
+          mouse.y - particle.y;
+
+        const mouseDistance =
+          Math.sqrt(
+            mouseDx * mouseDx +
+              mouseDy * mouseDy
+          );
+
+        if (
+          mouseDistance > 1 &&
+          mouseDistance < 220
+        ) {
+          const mouseForce =
+            ((220 - mouseDistance) /
+              220) *
+            0.015;
+
+          particle.vx +=
+            (mouseDx / mouseDistance) *
+            mouseForce;
+
+          particle.vy +=
+            (mouseDy / mouseDistance) *
+            mouseForce;
+        }
+
+        const maxSpeed = 3;
+
+        const speed =
+          Math.sqrt(
+            particle.vx *
+              particle.vx +
+              particle.vy *
+                particle.vy
+          );
+
+        if (speed > maxSpeed) {
+          particle.vx =
+            (particle.vx / speed) *
+            maxSpeed;
+
+          particle.vy =
+            (particle.vy / speed) *
+            maxSpeed;
+        }
+
+
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        // Wrap around screen
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
+        particle.trail.push({
+          x: particle.x,
+          y: particle.y,
+        });
 
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
-
-        // Mouse interaction
-        const dx = particle.x - mouse.x;
-        const dy = particle.y - mouse.y;
-
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < MOUSE_RADIUS && distance > 0) {
-          const force = (MOUSE_RADIUS - distance) / MOUSE_RADIUS;
-
-          particle.vx += (dx / distance) * force * 0.008;
-          particle.vy += (dy / distance) * force * 0.008;
+        if (
+          particle.trail.length >
+          TRAIL_LENGTH
+        ) {
+          particle.trail.shift();
         }
+      }
 
-        // Prevent particles from accelerating forever
-        particle.vx *= 0.995;
-        particle.vy *= 0.995;
 
-        // Draw particle
-        ctx.beginPath();
-        ctx.arc(
-          particle.x,
-          particle.y,
-          particle.radius,
-          0,
-          Math.PI * 2
+      for (const particle of particles) {
+        for (
+          let i = 1;
+          i < particle.trail.length;
+          i++
+        ) {
+          const previous =
+            particle.trail[i - 1];
+
+          const current =
+            particle.trail[i];
+
+          const progress =
+            i / particle.trail.length;
+
+
+          const opacity =
+            progress * 0.1;
+
+          ctx.beginPath();
+
+          ctx.moveTo(
+            previous.x,
+            previous.y
+          );
+
+          ctx.lineTo(
+            current.x,
+            current.y
+          );
+
+          ctx.strokeStyle =
+            hexToRgba(
+              particle.color,
+              opacity
+            );
+
+          ctx.lineWidth =
+            progress * 3;
+
+          ctx.stroke();
+        }
+      }
+
+      animationFrameId =
+        requestAnimationFrame(
+          animate
         );
-
-        ctx.fillStyle = "rgba(146, 146, 146, 0.45)";
-        ctx.fill();
-      }
-
-      // Draw connections
-      if (CONNECTION_DISTANCE > 0) {
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const a = particles[i];
-            const b = particles[j];
-
-            const dx = a.x - b.x;
-            const dy = a.y - b.y;
-
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < CONNECTION_DISTANCE) {
-              const opacity =
-                (1 - distance / CONNECTION_DISTANCE) * 0.18;
-
-              ctx.beginPath();
-              ctx.moveTo(a.x, a.y);
-              ctx.lineTo(b.x, b.y);
-
-              ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
-            }
-          }
-        }
-      }
-
-      animationFrameId = requestAnimationFrame(animate);
     };
 
     animate();
 
-    // Cleanup
     return () => {
-      window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener(
+        "resize",
+        resize
+      );
 
-      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener(
+        "mousemove",
+        handleMouseMove
+      );
+
+      window.removeEventListener(
+        "mouseleave",
+        handleMouseLeave
+      );
+
+      cancelAnimationFrame(
+        animationFrameId
+      );
     };
-  }, []);
+  }, [darkMode]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-[1] pointer-events-none"
+      className="fixed inset-0 z-[15] pointer-events-none"
     />
   );
+}
+
+
+function hexToRgba(
+  hex: string,
+  alpha: number
+) {
+  const r = parseInt(
+    hex.slice(1, 3),
+    16
+  );
+
+  const g = parseInt(
+    hex.slice(3, 5),
+    16
+  );
+
+  const b = parseInt(
+    hex.slice(5, 7),
+    16
+  );
+
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 

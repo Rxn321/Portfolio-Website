@@ -54,8 +54,7 @@ function App() {
       />
 
       {/* Particle Background */}
-      <ParticleBackground />
-
+      <ParticleBackground darkMode={darkMode} />
 
       {/*Top Overlay */}
       <motion.div
